@@ -4,7 +4,7 @@
 //
 //  Created by Quentin on 01.08.24.
 //
-
+#if os(iOS)
 import HealthKit
 
 @available(iOS 12.0, *)
@@ -197,3 +197,4 @@ extension ClinicalRecord.Harmonized: Payload {
         )
     }
 }
+#endif
