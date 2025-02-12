@@ -26,11 +26,13 @@ extension HKSample {
                 return try Electrocardiogram(electrocardiogram: electrocardiogram, voltageMeasurements: [])
             }
         }
+        #if os(iOS)
         if #available(iOS 12.0, *) {
             if let clinicalRecord = self as? HKClinicalRecord {
                 return try ClinicalRecord(clinicalRecord: clinicalRecord)
             }
         }
+        #endif
         throw HealthKitError.parsingFailed("HKSample could not be parsed")
     }
 }
