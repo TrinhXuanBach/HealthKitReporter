@@ -106,6 +106,7 @@ public class HealthKitManager {
      - Parameter workoutConfiguration: **WorkoutConfiguration** workout configuration
      - Parameter completion: returns a block with samples
      */
+    #if os(iOS)
     @available(iOS 10.0, *)
     public func startWatchApp(
         with workoutConfiguration: WorkoutConfiguration,
@@ -120,4 +121,5 @@ public class HealthKitManager {
             completion(false, error)
         }
     }
+    #endif
 }
