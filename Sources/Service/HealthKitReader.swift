@@ -437,6 +437,7 @@ public class HealthKitReader {
                     enumerationBlock(nil, error)
                 }
             }
+            enumerationBlock(nil, nil)
         }
         let query = HKStatisticsCollectionQuery(
             quantityType: quantityType,
